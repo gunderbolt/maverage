@@ -4,7 +4,6 @@ build-backend = "hatchling.build"
 
 [project]
 name = "maverage"
-version = "0.0.1"
 license = "MIT"
 authors = [
   { name="Nick Gunderson", email="go2nick@gmail.com" },
@@ -17,7 +16,15 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dynamic = ["version"]
 
 [project.urls]
 "Homepage" = "https://github.com/gunderbolt/maverage"
 "Bug Tracker" = "https://github.com/gunderbolt/maverage/issues"
+
+[tool]
+
+[tool.hatch]
+
+[tool.hatch.version]
+path = "src/maverage/__about__.py"
