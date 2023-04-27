@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "maverage"
+version = "0.0.1"
+license = "MIT"
+authors = [
+  { name="Nick Gunderson", email="go2nick@gmail.com" },
+]
+description = "Light implementations for using moving averages in real time."
+readme = "readme.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/gunderbolt/maverage"
+"Bug Tracker" = "https://github.com/gunderbolt/maverage/issues"
