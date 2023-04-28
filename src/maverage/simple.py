@@ -8,6 +8,8 @@ from collections import deque
 class Simple:
     """Simple Moving Average"""
     def __init__(self, size) -> None:
+        if not (isinstance(size, int) and size > 0):
+            raise ValueError(f'`size` must be a positive integer (not {size})')
         self._deque = deque([])
         self._cumulative = 0
 
@@ -37,6 +39,7 @@ class Simple:
 
 
 if __name__ == '__main__':
+    # TODO: Move these to tests.
     sma = Simple(3)
 
     v = sma.calc_input(1)
@@ -61,3 +64,17 @@ if __name__ == '__main__':
 
     print(sma)
     print(sma.average)
+
+    try:
+        Simple(0)
+    except ValueError:
+        print('passed non-positive size check')
+    else:
+        assert False, 'Exception expected for size argument.'
+
+    try:
+        Simple(1.5)
+    except ValueError:
+        print('passed non-int size check')
+    else:
+        assert False, 'Exception expected for size argument.'
