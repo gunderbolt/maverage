@@ -20,18 +20,25 @@ def test_invalid_size_argument(test_input):
 
 def test_moving_average(sma):  # pylint: disable=redefined-outer-name
     """Input values and check the results."""
-    val = sma.calc_input(1)
-    assert val==1
+    sma.input(1)
+    assert sma.average==1
 
-    val = sma.input(2)
-    assert val is None
+    sma.input(2)
     assert sma.average==1.5
 
-    val = sma.calc_input(3)
-    assert val==2
+    sma.input(3)
+    assert sma.average==2
 
-    val = sma.input(4)
+    sma.input(4)
     # Do not check sma.average this time to show it is not necessary.
 
-    val = sma.calc_input(5)
-    assert val==4
+    sma.input(5)
+    assert sma.average==4
+
+
+def test_chaining(sma):  # pylint: disable=redefined-outer-name
+    """Test that the input method allows for chaining the average property for immediate use."""
+    val = sma.input(1)
+    assert val is sma
+
+    assert sma.input(2).average==1.5

@@ -16,8 +16,8 @@ class Simple:
         self._samples = 0
         self._size = size
 
-    def input(self, value) -> None:
-        """Input next value. Do not calculate the average yet."""
+    def input(self, value) -> 'Simple':
+        """Input next value. Do not calculate the average."""
         if self._samples < self._size:
             self._cumulative += value
             self._samples += 1
@@ -26,11 +26,7 @@ class Simple:
             old_value = self._deque.pop()
             self._cumulative += value - old_value
             self._deque.appendleft(value)
-
-    def calc_input(self, value) -> float:
-        """Input the next value and return the calculated average."""
-        self.input(value)
-        return self.average
+        return self
 
     @property
     def average(self) -> float:
