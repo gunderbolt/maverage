@@ -28,3 +28,8 @@ dynamic = ["version"]
 
 [tool.hatch.version]
 path = "src/maverage/__about__.py"
+
+[tool.hatch.envs.dev]
+dependencies = [
+  "pytest",
+]
