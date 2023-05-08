@@ -1,6 +1,9 @@
 # maverage - Moving Average
 
-`maverage` provides a Simple Moving Average implementation that delays the
+
+## About maverage
+
+maverage provides a Simple Moving Average implementation that delays the
 average calculation until requested - useful for programs that collect data in
 real-time and delay processing until later.
 
@@ -12,22 +15,37 @@ real-time and delay processing until later.
 >>> s.input(4)
 >>> s.input(2)
 >>> s.average
-3
+3.0
 >>>s.input(6).average
-4
+4.0
 ```
 
 
-## Building and Testing
+## Testing
 
-`maverage` uses [`hatch`]() for building and `pytest` for testing. The `dev`
-hatch environment includes `pytest` as a dependency. Create it using:
-`hatch env create dev`.  Alternatively, use `hatch shell -e dev` to created it
-if it doesn't exist and enter it.
+maverage tests are written using pytest. The `dev` Hatch environment
+includes pytest (refer to the [Building](#building) section for details on how
+to set it up). Once inside the dev environment, run the tests by simply running
+`pytest`.
+
+
+## Building
+
+maverage is set up to use [Hatch](https://hatch.pypa.io/latest/) for building.
+
+Create a development environment using: `hatch env create dev`. Alternatively,
+use `hatch shell -e dev` to (1) created it if it doesn't exist and (2) open it
+in a shell session.
 
 > Note: To use the environment within VS Code, use the directory pointed to by
 > the `hatch find env dev` command.
 
-> TODO: Include build and versioning instructions.
+The project can be built, reversioned, and published with hatch's `build`,
+`version`, and `publish` commands, respectively.
+<!-- To publish, use username=__token__ and the API token as the password. -->
 
-Within the project directory, run the tests with the `pytest` command.
+
+## License
+
+This project uses the MIT License. Refer to [LICENSE.txt](LICENSE.txt) for
+details.

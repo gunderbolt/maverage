@@ -1,4 +1,5 @@
 '''Tests for the `Simple` moving average class.'''
+# pylint: disable=redefined-outer-name
 import pytest
 
 from maverage import Simple
@@ -18,7 +19,7 @@ def test_invalid_size_argument(test_input):
         Simple(test_input)
 
 
-def test_moving_average(sma):  # pylint: disable=redefined-outer-name
+def test_moving_average(sma):
     """Input values and check the results."""
     sma.input(1)
     assert sma.average==1
@@ -36,7 +37,7 @@ def test_moving_average(sma):  # pylint: disable=redefined-outer-name
     assert sma.average==4
 
 
-def test_chaining(sma):  # pylint: disable=redefined-outer-name
+def test_chaining(sma):
     """Test that the input method allows for chaining the average property for immediate use."""
     val = sma.input(1)
     assert val is sma
