@@ -47,5 +47,5 @@ The project can be built, reversioned, and published with hatch's `build`,
 
 ## License
 
-This project uses the MIT License. Refer to [LICENSE.txt](LICENSE.txt) for
+This project uses the MIT License. Refer to the project's LICENSE.txt for
 details.
